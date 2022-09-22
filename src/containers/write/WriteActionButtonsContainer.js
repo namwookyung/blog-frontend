@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import WriteActionButtons from '../../components/write/WriteActionButtons';
 import { useSelector, useDispatch } from 'react-redux';
-import { useNavigate, writeRouter } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { writePost, updatePost } from '../../modules/write';
 
 const WriteActionButtonsContainer = () => {
@@ -20,13 +20,15 @@ const WriteActionButtonsContainer = () => {
   // 포스트 등록
   const onPublish = () => {
     if (originalPostId) {
-      dispatch(
-        writePost({
-          title,
-          body,
-        }),
-      );
+      dispatch(updatePost({ title, body, id: originalPostId }));
+      return;
     }
+    dispatch(
+      writePost({
+        title,
+        body,
+      }),
+    );
   };
 
   // 취소
