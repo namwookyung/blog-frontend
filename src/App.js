@@ -4,14 +4,10 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import WritePage from './pages/WritePage';
 import PostPage from './pages/PostPage';
-import { Helmet } from 'react-helmet-async';
 
 const App = () => {
   return (
     <>
-      <Helmet>
-        <tilte>REACTERS</tilte>
-      </Helmet>
       <Routes>
         <Route path="/" exact element={<PostListPage />} />
         <Route path="/@:username" exact element={<PostListPage />} />

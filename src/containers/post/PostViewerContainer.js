@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { readPost, unloadPost } from '../../modules/post';
 import PostViewer from '../../components/post/PostViewer';
 import PostActionButtons from '../../components/post/PostActionButtons';
@@ -12,7 +12,7 @@ const PostViewerContainer = () => {
   const navigate = useNavigate();
   //   const params = useParams();
   // 처음 마운트될 때 포스트 읽기 API 요청
-  const { postId } = location.params;
+  const { postId } = useParams();
   const dispatch = useDispatch();
   const { post, error, loading, user } = useSelector(
     ({ post, loading, user }) => ({

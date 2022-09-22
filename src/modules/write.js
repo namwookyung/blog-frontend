@@ -3,7 +3,7 @@ import createRequestSaga, {
   createRequestActionTypes,
 } from '../lib/createRequestSaga';
 import * as postsAPI from '../lib/api/posts';
-import { takeLastest } from 'redux-saga/effects';
+import { takeLatest } from 'redux-saga/effects';
 
 const INITIALIZE = 'write/INITIALIZE'; // 모든 내용 초기화
 const CHANGE_FIELD = 'write/CHANGE_FIELD'; // 특정 key 값 바꾸기
@@ -36,8 +36,8 @@ const writePostSaga = createRequestSaga(WRITE_POST, postsAPI.writePost);
 const updatePostSaga = createRequestSaga(UPDATE_POST, postsAPI.updatePost);
 
 export function* writeSaga() {
-  yield takeLastest(WRITE_POST, writePostSaga);
-  yield takeLastest(UPDATE_POST, updatePostSaga);
+  yield takeLatest(WRITE_POST, writePostSaga);
+  yield takeLatest(UPDATE_POST, updatePostSaga);
 }
 
 const initialState = {
