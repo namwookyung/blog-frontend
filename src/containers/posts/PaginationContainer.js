@@ -6,7 +6,7 @@ import QueryString from 'qs';
 const PaginationContainer = () => {
   const location = useLocation();
   const params = useParams();
-  const { lastPage, posts, loading } = useSelector(({ posts, lodaing }) => ({
+  const { lastPage, posts, loading } = useSelector(({ posts, loading }) => ({
     lastPage: posts.lastPage,
     posts: posts.posts,
     loading: loading['posts/LIST_POSTS'],
