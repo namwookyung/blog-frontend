@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { readPost, unloadPost } from '../../modules/post';
 import PostViewer from '../../components/post/PostViewer';
 import PostActionButtons from '../../components/post/PostActionButtons';
@@ -8,7 +8,7 @@ import { setOriginalPost } from '../../modules/write';
 import { removePost } from '../../lib/api/posts';
 
 const PostViewerContainer = () => {
-  const location = useLocation();
+  // const location = useLocation();
   const navigate = useNavigate();
   //   const params = useParams();
   // 처음 마운트될 때 포스트 읽기 API 요청
